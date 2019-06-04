@@ -1,0 +1,99 @@
+.shrink {
+  height: 0 !important;
+  padding: 0 !important;
+  transition: 1s ease-in;
+}
+
+.fade-out {
+  -webkit-animation: fadeout .5s ease-in;
+  animation: fadeout .5s ease-in;
+}
+
+.fade-in {
+  -webkit-animation: fadein .5s ease-in;
+  animation: fadein .5s ease-in;
+}
+
+.turn-centered {
+  -webkit-animation: turn .5s ease-in;
+  animation: turn .5s ease-in;
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to   {
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to   {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to   {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to   {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes turn {
+  from {
+    transform: rotate(0) translate3d(-50%,-50%,0);
+    transform-origin: 0 0;
+    opacity: 0 !important;
+  }
+  to   {
+    transform: rotate(320deg) translate3d(-50%,-50%,0);
+    transform-origin: 0 0;
+    opacity: 0 !important;
+  }
+}
+@keyframes turn {
+  from {
+    transform: rotate(0deg) translate3d(-50%,-50%,0);
+    transform-origin: 0 0;
+    opacity: 0 !important;
+  }
+  to   {
+    transform: rotate(320deg) translate3d(-50%,-50%,0);
+    transform-origin: 0 0;
+    opacity: 0 !important;
+  }
+}
+
+/*
+     FILE ARCHIVED ON 11:49:03 Aug 07, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:44:19 Jun 04, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 219.018 (3)
+  esindex: 0.01
+  captures_list: 249.272
+  CDXLines.iter: 18.682 (3)
+  PetaboxLoader3.datanode: 267.708 (5)
+  exclusion.robots: 0.238
+  exclusion.robots.policy: 0.222
+  RedisCDXSource: 4.299
+  PetaboxLoader3.resolve: 128.885 (2)
+  load_resource: 344.007
+*/

@@ -1,0 +1,1526 @@
+html {
+  /*-webkit-font-smoothing: antialiased;*/
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-size: 16px;
+  color: transparent;
+}
+body {
+  min-height: 100%;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  /*-ms-word-break: break-all;
+  word-break: break-all;*/
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  opacity: .7;
+  transition: .2s;
+}
+
+button[data-role='cta'],
+a[data-role='cta'] {
+  border: 2px solid;
+  padding: 8px 14px;
+  border-radius: 4px;
+}
+
+hr {
+  margin-bottom: 2rem;
+}
+
+article button[data-role='cta'],
+article a[data-role='cta'] {
+  margin: 1rem 0;
+  display: inline-block;
+}
+
+.cta:nth-of-type(2) {
+  margin-left: 1.5rem;
+/*  margin-top: 1rem;*/
+}
+
+pre {
+  font-size: 95%;
+  line-height: 140%;
+  overflow: auto;
+  overflow-x: scroll;
+  background: #000;
+  color: #eff0f1;
+  display: code;
+  font-family: monospace;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+h1,h2,h3,h4,h5,h6{
+  word-wrap: break-word;
+  transition: .6s ease-out;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 0rem;
+}
+h1 {
+  /*font-size: 1.5rem;*/
+  line-height: 1.25;
+  margin-top: 0;
+}
+h2 {
+  /*line-height: 1.35;*/
+  font-size: 1.25rem;
+}
+h3 {
+  line-height: 1.43;
+}
+h4 {
+  line-height: 1.5;
+}
+h5 {
+  font-weight: 500;
+}
+p, .Paragraph {
+  line-height: 1.6;
+  margin: 1em 0;
+  /*font-size: 1.2rem;*/
+}
+p a,
+li a,
+blockquote a,
+.Paragraph a {
+  text-decoration: underline;
+}
+p:first-of-type {
+  margin: 0 0 1em;
+}
+button {
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  border-radius: 3px;
+  letter-spacing: .1rem;
+  margin: 1rem 0 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+}
+img,
+picture,
+iframe
+{
+  max-width: 100%;
+  width: 100%;
+  min-height: inherit;
+  margin: auto;
+  display: block;
+}
+
+img.loaded {
+  background: transparent !important;
+}
+
+iframe {
+  /*background: #fff;*/
+  border: none;
+  outline: none;
+  min-height: auto;
+}
+
+ul, ol {
+  list-style-position: inside;
+  padding-left: 1rem;
+  text-indent: -1em;
+}
+
+ul li,
+ol li {
+  margin-bottom: 1rem;
+}
+
+.Headline,
+.Fallback h1
+{
+  margin: 1rem 0 1rem 0;
+}
+
+.Headline:first-of-type,
+.Fallback h1:first-of-type
+{
+  margin-top: 0em;
+  margin-bottom: 1rem;
+}
+
+
+.Attribution {
+  margin: 1rem 0 1rem 0;
+}
+
+.Attribution:first-of-type {
+  margin: 0em 0 1rem 0;
+}
+
+.Attribution:only-of-type {
+  margin: 0;
+}
+
+.Group {
+  padding: 1rem 1rem 1rem;
+  transition: .6s ease-out;
+  position: relative;
+  display: block;
+}
+
+.Group--textual p {
+  padding: 0;
+}
+.Group--graphical {
+  width: 100%;
+  /*max-height: 100vh !important;*/
+  overflow: hidden;
+}
+
+.Group--graphical .Image {
+  max-height: 100vh;
+}
+
+.Group--graphical .Attribution {
+  margin-top: .5rem;
+}
+
+.Group--column img,
+.Group--column picture {
+  margin-bottom: 1rem;
+}
+
+.Group:not(.Group--graphical) {
+  z-index: 10;
+}
+
+.Group--links a {
+  text-decoration: none;
+}
+.Group--links {
+  max-width: none;
+}
+.Group--links .Link {
+  flex: 1;
+  display: block;
+  font-weight: 200;
+  transition: .3s ease-out;
+}
+
+.Component {
+  position: relative;
+}
+
+.Section {
+  width: 100%;
+  /*padding: 2vw;*/
+  position: relative;
+  display: block;
+  align-items: stretch;
+  transition: .6s ease-out;
+  /*transform: translate3d(0,0,0);*/
+}
+
+.Section:before {
+  content: '';
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: .1;
+}
+
+
+/* Nav
+**************************/
+
+
+.Section--nav {
+  transition: .3s ease-out;
+  position: fixed;
+  width: 100%;
+  padding: 0 !important;
+  top: 0;
+  left: 0;
+  z-index: 31;
+}
+.Section--nav .Component {
+  margin: 0;
+  padding: 0;
+}
+.Section--nav.Hidden .Component {
+  transition: height .3s ease-out .2s;
+  height: 2px;
+}
+.Section--nav .Class-list {
+  display: none;
+}
+
+
+/* Nav List
+**************************/
+.Site-title * {
+  hyphens: none;
+}
+.Nav.Icon {
+  cursor: pointer;
+}
+
+.Nav--list-row {
+  transition: .3s ease-out;
+  height: 64px;
+  overflow: hidden;
+  padding: 1rem 0 0;
+  width: 100%;
+}
+
+.Nav--list-row .Group--links .Link {
+  opacity: 1;
+  margin: .25rem 2rem 0;
+  display: inline-block;
+  /*transform-origin: 0 50%;*/
+}
+.Nav--list-row .Group--links .Link:last-of-type {
+  margin: .25rem 0rem 0 2rem;
+  /*transform-origin: 0 50%;*/
+}
+
+.Nav--list-row .Icon {
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  font-size: 1.25em;
+}
+
+.Nav--list-row.Active.nav-overflow {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.Nav--list-row.nav-overflow .Icon {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.Nav--list-row.nav-overflow {
+
+}
+
+.Nav--list-row.nav-overflow .Group--links .Link {
+  display: block;
+  margin: 0 0 1rem;
+  opacity: 0;
+}
+
+.Nav--list-row.nav-overflow.Active .Group--links .Link {
+  opacity: 1;
+  transform: translate3d(0,.5em,0);
+}
+
+.Nav--list-row:not(.nav-overflow) .Group--links h1 {
+  font-size: 1rem;
+}
+
+.Nav--list-row.nav-overflow .Group--links {
+  padding: 3em 0 100px 0 !important;
+}
+
+/* Nav Hamburger
+**************************/
+
+.Nav--hamburger{
+  transition: .4s ease-out;
+  height: 64px;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+.Nav--hamburger .Group--links .Link {
+  opacity: 0;
+}
+.Nav--hamburger .Group--links .Icon {
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+  font-size: 1.25em;
+}
+
+.Nav--hamburger.Active .Group--links .Link {
+  opacity: 1;
+}
+
+.Nav--hamburger.Active {
+  height: 100vh;
+  width: 100vw !important;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.Nav--hamburger.Active .Site-title {
+  opacity: .3;
+}
+
+/* Nav gutters
+**************************/
+
+@media (max-width: 960px) {
+  .Nav--gutters{
+    transition: .5s ease-out;
+    width: 3rem;
+    overflow: hidden;
+    padding: 0;
+  }
+  .Nav--gutters .Group--links .Link {
+    opacity: 0;
+  }
+  .Nav--gutters .Group--links .Icon {
+    opacity: 1;
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+    font-size: 1.25em;
+  }
+
+  .Nav--gutters.Active .Group--links .Link {
+    opacity: 1;
+  }
+
+  .Nav--gutters.Active {
+    height: 100vh;
+    width: 100vw !important;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .Nav--gutters.Active .Site-title {
+    opacity: .3;
+  }
+}
+
+/* Text Alignment
+**************************/
+
+.text-align-left {
+  text-align: left;
+}
+.text-align-center {
+  text-align: center;
+}
+.text-align-right:not(.group-align-end) .Component {
+  text-align: right;
+}
+.text-align-justify {
+  text-align: justify;
+}
+
+/* Section background image
+**************************/
+
+.section-bgcover-wo .Bg,
+.Section:not(.Section--components-1).section-bgcover-and .Bg {
+  /*display: none;*/
+}
+
+.section-bgcover-wo .Group--graphical {
+  display: block;
+}
+.section-bgcover-w .Group--graphical {
+  /*display: none;*/
+}
+
+.section-bgcover-w .Group,
+.section-bgcover-and .Group:not(.Group--graphical) {
+  /*background: #FFF0BA;*/
+  /*width: auto;*/
+  min-width: auto;
+}
+
+.Section--components-1.section-bgcover-w,
+.Section--components-1.section-bgcover-and
+{
+  min-height: 400px;
+  padding: 0 !important;
+}
+.Section--components-1.section-bgcover-w .Component,
+.Section--components-2.section-bgcover-w .Component,
+.Section--components-3.section-bgcover-w .Component,
+.Section--components-1.section-bgcover-and .Component,
+.Section--components-2.section-bgcover-and .Component
+{
+  /*padding: 4vw !important;*/
+}
+.Section--components-3.section-bgcover-and .Component,
+.Section--components-4.section-bgcover-w .Component,
+.Section--components-5.section-bgcover-w .Component,
+.Section--components-6.section-bgcover-w .Component
+{
+  /*padding: 2vw !important;*/
+}
+
+.Section--components-1.section-bgcover-and .Bg {
+  /*width: 100% !important;*/
+  /*height: 100% !important;*/
+  left: 0;
+  top: 0 !important;
+  transform: translate3d(0,0,0) !important;
+}
+@media (min-width: 960px) {
+  .section-bgcover-and .Bg .Cover {
+    -webkit-filter: blur(22px);
+    -moz-filter: blur(22px);
+    filter: blur(22px);
+  }
+}
+.Section--components-1.section-bgcover-and .Bg .Cover img,
+.Section--components-1.section-bgcover-and .Bg .Cover picture,
+.Section--components-1.section-bgcover-and .Bg .Cover iframe,
+.Section--components-1.section-bgcover-and .Bg .Cover video {
+  object-fit: cover !important;
+  /*-webkit-filter: blur(10px);*/
+  width: 100%;
+  height: 100%;
+  top: -9px;
+}
+
+.Bg {
+  position: absolute;
+  padding: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: .6s ease-out;
+}
+@media (min-width: 960px) {
+  .Bg {
+    top: 0;
+  }
+}
+.Bg .Cover{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.Bg .Cover img,
+.Bg .Cover picture,
+.Bg .Cover iframe,
+.Bg .Cover video {
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Section background image padding
+***********************************/
+
+.section-bgcover-padding-none.Section--components-1:not(.section-bgcover-size-third):not(.section-bgcover-size-quarter) .Bg {
+  padding: 0 !important;
+}
+.section-bgcover-padding-xsmall.Section--components-1:not(.section-bgcover-size-third):not(.section-bgcover-size-quarter) .Bg {
+  padding: .5vw !important;
+}
+.section-bgcover-padding-small.Section--components-1:not(.section-bgcover-size-third):not(.section-bgcover-size-quarter) .Bg {
+  padding: 1vw !important;
+}
+.section-bgcover-padding-medium.Section--components-1:not(.section-bgcover-size-third):not(.section-bgcover-size-quarter) .Bg {
+  padding: 2vw !important;
+}
+.section-bgcover-padding-large.Section--components-1:not(.section-bgcover-size-third):not(.section-bgcover-size-quarter) .Bg {
+  padding: 3vw !important;
+}
+
+.section-bgcover-fit-cover .Bg img,
+.section-bgcover-fit-cover .Bg picture
+{
+  object-fit: cover;
+  object-position: 60% 50%;
+}
+.section-bgcover-fit-contain .Bg img,
+.section-bgcover-fit-contain .Bg picture
+{
+  object-fit: contain;
+}
+.section-bgcover-align-top .Bg {
+  top: 0;
+  bottom: auto;
+}
+.section-bgcover-align-center .Bg {
+  top: 50%;
+  transform: translate3d(0,-50%,0);
+}
+.section-bgcover-align-bottom .Bg {
+  top: auto;
+  bottom: 0;
+}
+.section-bgcover-align-stretch .Bg {
+  top: 0;
+  bottom: 0;
+  height: 100% !important;
+}
+
+.section-bgcover-justify-left .Bg {
+  left: 0;
+}
+.section-bgcover-justify-center .Bg {
+  right: auto;
+  left: 50%;
+  transform: translate3d(-50%,0,0);
+}
+.section-bgcover-justify-right .Bg {
+  right: 0;
+  left: auto;
+}
+.section-bgcover-justify-stretch .Bg {
+  right: 0;
+  left: 0;
+  width: 100% !important;
+}
+
+.section-bgcover-justify-center.section-bgcover-align-center .Bg {
+  transform: translate3d(-50%,-50%,0);
+}
+
+/* Articles
+***********************************/
+
+.Section--article p {
+  font-size: 1.2rem;
+  font-family: 'Georgia', 'Times', '_serif';
+  line-height: 1.618;
+  margin-top: 1em;
+}
+
+.Section--article article {
+  padding-bottom: 8rem !important;
+}
+
+article .Dropcap > p:first-child:first-letter {
+  float: left;
+  font-size: 6.85rem;
+  line-height: 5rem;
+  padding-top: 2px;
+  padding-right: 8px;
+  padding-left: 0px;
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-weight: 700;
+  margin-left: -8px;
+  position: relative;
+}
+
+article .Dropcap > p:first-child:first-letter {
+  float: left;
+  font-size: 6.85rem;
+  line-height: 5rem;
+  padding-top: 2px;
+  padding-right: 8px;
+  padding-left: 0px;
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-weight: 700;
+  margin-left: -8px;
+  position: relative;
+}
+
+.Section--article .Bg {
+  top: 0;
+}
+.Section--article article img,
+.Section--article article picture
+{
+  /*margin: 1rem auto;*/
+  position: relative;
+  width: auto;
+}
+.Section--article .Cover img,
+.Section--article .Image img,
+.Section--article .Cover picture,
+.Section--article .Image picture,
+{
+  object-fit: cover;
+  max-height: 90vh;
+}
+
+.Section--article .Group--Column .Image img,
+.Section--article .Group--Column .Image picture
+{
+  margin-top: .9em;
+}
+
+.Section--article .Cover,
+.Section--article .Image
+{
+  width: auto;
+}
+
+.Section.Fallback img,
+.Section.Fallback picture
+{
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  margin-bottom: 1rem;
+}
+.Section.Fallback .Component{
+  /*width: 100%;*/
+  max-width: 768px;
+  margin: auto;
+}
+
+.Paragraph blockquote,
+.Component > blockquote,
+.Content > blockquote {
+  font-size: 1.4rem;
+  padding-left: 2rem;
+  line-height: 1.3;
+  border-left: 6px solid;
+  margin-bottom: 2em;
+  opacity: .6;
+  text-align: left !important;
+  font-style: italic;
+}
+
+.big-quotes blockquote {
+  border-left: 0;
+}
+
+.Section--article.section-bgcover-and .Component:not(article) {
+  padding-top: 20vh !important;
+}
+
+/* Section Height
+**************************/
+
+.section-height-fullscreen {
+  min-height: 50vw;
+}
+.section-height-fullscreen .Component {
+  min-height: 400px;
+}
+
+
+/* RAMS DESIGN SYSTEM
+**************************/
+
+.Rams {
+
+}
+.Rams .Headline span,
+.Rams .Attribution span{
+  -webkit-box-decoration-break: clone;
+}
+.Rams .Headline {
+  padding: 0;
+}
+
+.Jones .Headline:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  border-top: 8px solid;
+  border-right: 8px solid;
+  border-left: 8px solid;
+  left: 0;
+  top: -40px;
+}
+.Jones .Headline:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  border-bottom: 8px solid;
+  border-right: 8px solid;
+  border-left: 8px solid;
+  left: 0;
+  bottom: -40px;
+}
+
+
+/* BASS DESIGN SYSTEM */
+.Bass {
+
+}
+.Bass .Headline {
+  margin: 0;
+}
+.Bass section {
+
+}
+.Bass .Section--components-5.section-bgcover-w .Component .Group,
+.Bass .Section--components-6.section-bgcover-w .Component .Group
+{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.Bass h1 span.color-title-reverse,
+.Bass h2 span.color-title-reverse,
+.Bass h3 span.color-title-reverse,
+.Bass h4 span.color-title-reverse,
+.Bass .Attribution span.color-title-reverse,
+.Bass .Paragraph blockquote span.color-title-reverse
+{
+  padding: .2rem .4rem;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.4;
+}
+
+.Bass .Section:not(.section-bgcover-w):not(.section-bgcover-and) .Component:not(:last-of-type):after {
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 1rem;
+  border-right: 1px solid;
+  height: calc(100% - 2rem);
+  opacity: .2;
+}
+
+.Bass p {
+  padding: 0 !important;
+}
+
+
+/* Gerstner DESIGN SYSTEM */
+.Gerstner {
+
+}
+.Gerstner section {
+
+}
+.Gerstner .Section--components-5.section-bgcover-w .Component .Group,
+.Gerstner .Section--components-6.section-bgcover-w .Component .Group
+{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.Gerstner .Headline span.color-title-reverse,
+.Gerstner .Attribution span.color-title-reverse,
+.Gerstner .Paragraph blockquote span.color-title-reverse
+{
+  padding: .2rem .4rem;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.4;
+}
+
+.Gerstner .Section:not(.section-bgcover-w):not(.section-bgcover-and) .Component:not(:last-of-type):after {
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 1rem;
+  border-right: 1px solid;
+  height: calc(100% - 2rem);
+  opacity: .2;
+}
+
+.Gerstner p {
+  padding: 0 !important;
+}
+
+
+/* VIGNELLI DESIGN SYSTEM
+**************************/
+
+.Vignelli .section-flex-row.Section--components-1 .Group:not(.Group--graphical):not(.Group--meta) > div:last-of-type {
+  margin-bottom: 0;
+}
+
+.Vignelli .Section:not(.Fallback) .Headline,
+.Vignelli .Fallback h1,
+.Vignelli .Fallback h2,
+.Vignelli .Fallback h3,
+.Vignelli .Fallback h4,
+.Vignelli .Fallback h5,
+.Vignelli .Fallback p:first-of-type,
+.Vignelli .Fallback ul,
+.Vignelli .Fallback ol {
+  border: none;
+  border-top: 6px solid;
+  padding: .5rem 0 1.5rem;
+}
+.Vignelli .Group .Attribution {
+  border: none;
+  border-top: 1px solid;
+  padding: .5rem 0;
+}
+.Vignelli .Fallback ul {
+  padding-left: 1rem;
+}
+.Vignelli .Group:not(:first-of-type) .Paragraph {
+  /*border-top: 1px solid;*/
+  border: none !important;
+}
+.Vignelli  .Paragraph {
+  /*border-top: 1px solid;*/
+  border: none !important;
+  padding: 0 0 1rem;
+}
+.Vignelli .Paragraph blockquote {
+  border: none;
+  padding: 1rem 0 1.5rem;
+}
+
+.Vignelli .section-flex-row.group-align-end .Attribution:only-of-type
+{
+  border-top: none;
+  border-bottom: 6px solid;
+}
+
+
+/* Brockmann DESIGN SYSTEM
+**************************/
+
+.Brockmann .Section:not(.section-bgcover-w):not(.section-bgcover-and) .Component:not(:last-of-type):after {
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 1rem;
+  border-right: 1px solid;
+  height: calc(100% - 2rem);
+  opacity: .2;
+}
+
+.Brockmann h1 > span{
+  border-bottom: .075em solid;
+  line-height: 1.5;
+  padding: 0;
+}
+
+.Brockmann .Attribution > span{
+  border-bottom: .075em solid;
+  padding: 0;
+}
+
+
+/* Eames DESIGN SYSTEM
+**************************/
+
+.Eames .Section:not(.section-bgcover-w):not(.section-bgcover-and) .Component:not(:last-of-type):after {
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  opacity: .2;
+}
+
+.Eames h1:before,
+.Eames h2:before,
+.Eames h3:before {
+  content: '';
+  width: 40px;
+  height: 1px;
+  border-top: 4px solid;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: .4;
+}
+
+.Eames .Attribution span{
+  border-bottom: .125em solid;
+  padding: 0;
+}
+
+.Eames .t-a-c h1:before,
+.Eames .t-a-c h2:before,
+.Eames .t-a-c h3:before {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Eames .Section:not(.Section--components-1) .Component .Bg {
+  padding: 0 !important;
+}
+.Eames .Section:not(.Section--components-1).section-bgcover-w {
+  padding: 0 !important;
+}
+
+
+/* Tschichold DESIGN SYSTEM
+**************************/
+
+.Tschichold .Section:not(.section-bgcover-w):not(.section-bgcover-and) .Component:not(:last-of-type):after {
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  opacity: .2;
+}
+
+.Tschichold .Headline:not(:last-of-type):after,
+.Tschichold .Headline:not(:last-of-type):after,
+.Tschichold .Headline:not(:last-of-type):after {
+  content: '';
+  width: 1px;
+  height: 48px;
+  border-right: 1px solid;
+  display: block;
+  margin: auto;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  opacity: .4;
+}
+
+/* Tschichold POP DESIGN SYSTEM
+**************************/
+
+.TschicholdPop .Section:not(.section-bgcover-w):not(.section-bgcover-and) .Component:not(:last-of-type):after {
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  opacity: .15;
+}
+
+.TschicholdPop .Headline:not(:last-of-type):after {
+  content: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" \
+   viewBox="0 0 9.3 41.6" enable-background="new 0 0 9.3 41.6" xml:space="preserve"> \
+    <path d="M2.5,41.6l-2.1-2.1l5.6-5.6c0.2-0.2,0.3-0.4,0.3-0.7s-0.1-0.5-0.3-0.7l-4.7-4.7C0.4,27.1,0,26.1,0,25s0.4-2.1,1.2-2.8 \
+      l4.9-4.9c0.2-0.2,0.3-0.4,0.3-0.7s-0.1-0.5-0.3-0.7L1.2,11C0.4,10.3,0,9.3,0,8.2c0-1.1,0.4-2.1,1.2-2.8L6.6,0l2.1,2.1L3.3,7.5 \
+      C3.1,7.7,3,8,3,8.2c0,0.3,0.1,0.5,0.3,0.7l4.9,4.8c0.8,0.8,1.2,1.8,1.2,2.8s-0.4,2.1-1.2,2.8l-4.9,4.9C3.1,24.5,3,24.7,3,25 \
+      s0.1,0.5,0.3,0.7L8,30.4c0.8,0.8,1.2,1.8,1.2,2.8S8.8,35.3,8,36.1L2.5,41.6z"/> \
+    </svg> \
+    ');
+  width: 10px;
+  height: 48px;
+  display: block;
+  margin: auto;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  opacity: .15;
+}
+.TschicholdPop .colors-dark .Headline:not(:last-of-type):after,
+.TschicholdPop .colors-black .Headline:not(:last-of-type):after,
+.TschicholdPop .colors-vivid .Headline:not(:last-of-type):after {
+  content: url('data:image/svg+xml;utf8,<svg fill="#fff" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" \
+   viewBox="0 0 9.3 41.6" enable-background="new 0 0 9.3 41.6" xml:space="preserve"> \
+    <path d="M2.5,41.6l-2.1-2.1l5.6-5.6c0.2-0.2,0.3-0.4,0.3-0.7s-0.1-0.5-0.3-0.7l-4.7-4.7C0.4,27.1,0,26.1,0,25s0.4-2.1,1.2-2.8 \
+      l4.9-4.9c0.2-0.2,0.3-0.4,0.3-0.7s-0.1-0.5-0.3-0.7L1.2,11C0.4,10.3,0,9.3,0,8.2c0-1.1,0.4-2.1,1.2-2.8L6.6,0l2.1,2.1L3.3,7.5 \
+      C3.1,7.7,3,8,3,8.2c0,0.3,0.1,0.5,0.3,0.7l4.9,4.8c0.8,0.8,1.2,1.8,1.2,2.8s-0.4,2.1-1.2,2.8l-4.9,4.9C3.1,24.5,3,24.7,3,25 \
+      s0.1,0.5,0.3,0.7L8,30.4c0.8,0.8,1.2,1.8,1.2,2.8S8.8,35.3,8,36.1L2.5,41.6z"/> \
+    </svg> \
+    ');
+
+}
+
+.TschicholdPop img {
+  border-radius: 3px;
+}
+
+.TschicholdPop .Section:not(.Section--components-1) .Component .Bg {
+  padding: 0 !important;
+}
+.TschicholdPop .Section:not(.Section--components-1).section-bgcover-w {
+  padding: 0 !important;
+}
+
+
+/* Mackintosh DESIGN SYSTEM
+**************************/
+
+.Mackintosh .Section:not(.section-bgcover-w):not(.section-bgcover-and) .Component:not(:last-of-type):after {
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  opacity: .2;
+}
+
+.Mackintosh h1:after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  border-top: 8px dotted;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  left: 3px;
+  position: relative;
+  opacity: .4;
+}
+
+.Mackintosh .t-a-c h1:after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Bill DESIGN SYSTEM Max Bill http://thinkingform.com/2013/03/20/thinking-hans-neuburg-03-20-1904/#/2012/12/24/thinking-max-bill-12-22-1908/
+**************************/
+
+.Bill .Items .Group--column {
+  left: -3vw !important;
+  top: -3vw !important;
+}
+.Bill .Items .Group--heading {
+  left: -2vw !important;
+  top: -5vw !important;
+}
+.Bill .Items .Component:nth-of-type(2) .Group--heading {
+  left: 2vw !important;
+  top: -4vw !important;
+}
+.Bill .Items .Component:nth-of-type(3) .Group--heading {
+  left: 1vw !important;
+  top: -3vw !important;
+}
+.Bill .Items .Section--components-1 .Group--heading {
+  left: -4vw !important;
+  top: 2vw !important;
+}
+.Bill .Items .Section--components-1 .Group--column {
+  left: -4vw !important;
+  top: 2vw !important;
+}
+
+
+/* Herdeg DESIGN SYSTEM Walter Herdeg http://www.typogabor.com/Media/Graphis_Diagrams_SignGr/Graphis_Diagrams_DSC_6827.jpg
+**************************/
+
+.Herdeg .Items .Section:not(.Section--loadmore) .Component:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: .7rem solid;
+  pointer-events: none;
+}
+
+.Herdeg .Items .Component {
+  margin: .1rem;
+}
+
+/* Neuburg DESIGN SYSTEM Hans Neuburg http://thinkingform.com/2013/03/20/thinking-hans-neuburg-03-20-1904/
+**************************/
+
+.Neuburg .Section:not(.section-bgcover-w):not(.section-bgcover-and) .Component:not(:last-of-type):after {
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 1rem;
+  height: calc(100% - 2rem);
+  opacity: .2;
+  border-right: 1px solid;
+}
+
+.Neuburg .Attribution span{
+  border-bottom: .125em solid;
+  padding: 0;
+}
+
+.Neuburg .Paragraph blockquote {
+  /*border: none;
+  padding: 0;*/
+}
+
+.Neuburg .Section--components-1 .Headline:before
+{
+  content: '';
+  width: 62%;
+  height: 50px;
+  left: 19%;
+  right: 19%;
+  margin: 0;
+  border: 8px solid;
+  border-bottom: none;
+  display: inline-block;
+}
+.Neuburg .Headline:after
+{
+  content: '';
+  width: 62%;
+  height: 50px;
+  left: 19%;
+  right: 19%;
+  margin: 0 0 4px 0;
+  border: 8px solid;
+  border-top: none;
+  display: inline-block;
+  pointer-events: none;
+}
+.Neuburg .Section--components-2 .Headline:after,
+.Neuburg .Section--components-3 .Headline:after,
+.Neuburg .Section--components-4 .Headline:after
+{
+  width: 40px;
+  height: 0;
+  border-width: 4px;
+}
+
+/* ATOMIC
+**************************************/
+
+.overflow-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.overflow-x .Component * {
+  white-space: normal;
+}
+
+.group-graphical-shape-circle .Group--graphical,
+.group-graphical-shape-square .Group--graphical {
+  padding: 0;
+}
+
+.group-graphical-shape-circle .Group--graphical:before,
+.group-graphical-shape-square .Group--graphical:before {
+  content: '';
+  padding-top: 100%;
+  display: block;
+}
+.group-graphical-shape-circle .Group--graphical .Cover,
+.group-graphical-shape-square .Group--graphical .Cover {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+}
+.group-graphical-shape-circle .Group--graphical .Cover img,
+.group-graphical-shape-square .Group--graphical .Cover img,
+.group-graphical-shape-circle .Group--graphical .Cover picture,
+.group-graphical-shape-square .Group--graphical .Cover picture
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.group-graphical-shape-circle .Group--graphical .Cover img,
+.group-graphical-shape-circle .Group--graphical .Cover picture
+{
+  border-radius: 50%;
+}
+
+
+/* COMPONENTS
+********************/
+.graphical--slider .dots,
+.graphical--slider .arrow-left,
+.graphical--slider .arrow-right{
+  display: none;
+}
+
+
+/* Image Slider
+**********************/
+
+.graphical--slider {
+  min-height: 500px;
+}
+.graphical--slider .dots{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate3d(-50%,0,0);
+  z-index: 11;
+  display: block;
+  border-radius: 40px;
+}
+.graphical--slider .dots li {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1px 10px;
+  opacity: .4;
+}
+.graphical--slider .dots li.current {
+  opacity: 1;
+}
+
+.graphical--slider .arrow-left:hover,
+.graphical--slider .arrow-right:hover
+{
+  background: inherit;
+  opacity: 1;
+}
+.graphical--slider .arrow-left.disabled,
+.graphical--slider .arrow-right.disabled
+{
+  opacity: .3;
+  cursor: none;
+}
+
+.graphical--slider .Group--graphical {
+  transform: translate3d(-50%,-50%,0);
+  opacity: 0;
+  pointer-events: none;
+}
+.graphical--slider .Group--graphical .Image {
+  height: 100%;
+}
+.graphical--slider .Group--graphical img,
+.graphical--slider .Group--graphical picture
+{
+  max-height: 100vh;
+  width: auto;
+  max-width: 100%;
+  margin: auto;
+}
+.graphical--slider .Group--graphical.current {
+  transform: translate3d(-50%,-50%,0);
+  transition-delay: .3s;
+  opacity: 1;
+  pointer-events: auto;
+}
+.graphical--slider .Group--graphical.past {
+  transform: translate3d(-50%,-50%,0);
+}
+
+.graphical--slider .Group--graphical .Headline {
+  opacity: 0;
+  transition: .8s ease-out;
+  transform: translateX(-200px);
+}
+.graphical--slider .Group--graphical.current .Headline {
+  opacity: 1;
+  transition-delay: 0s;
+  transform: translateX(0);
+}
+.graphical--slider .Group--graphical.past .Headline {
+  transform: translateX(0);
+}
+
+.Section--footer {
+  transform: translate3d(0,0,0);
+}
+
+.Section--footer .Group--links:before{
+  content: "";
+  z-index: 11;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-right: 1px solid;
+  height: 100%;
+  opacity: .2;
+}
+
+.Section.Section--components-1.square-4 .Group--graphical:nth-child(-n+2) {
+  align-self: flex-end;
+}
+.Section.Section--components-1.square-4 .Group--graphical:nth-child(n+3) {
+  align-self: flex-start;
+}
+
+@media (min-width: 960px) {
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  .Bg .Cover {
+    // max-height: 100vh;
+  }
+
+  .Paragraph blockquote {
+    padding-left: 2rem;
+  }
+
+  .Section--footer .Link {
+    margin: 0 2vw 1rem;
+  }
+
+
+  /* Hero Transition
+  **************************/
+
+  .hero-transition-fixed div:first-of-type section:not(:only-of-type) {
+    top: 80vh;
+  }
+  .hero-transition-unveil div:first-of-type section:nth-of-type(1):not(:only-of-type) {
+    top: 0;
+  }
+  .hero-transition-fixed div:first-of-type section:nth-of-type(1):not(:only-of-type) {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+  }
+  .hero-transition-parallax div:first-of-type section:nth-of-type(1):not(:only-of-type) {
+    top: 0;
+  }
+  .hero-transition-fixed .Section--footer {
+    top: 80vh;
+  }
+
+  /* Section Desktop Resets
+  **************************/
+
+  .Section:not(.Section--components-1) .Component .Bg {
+    padding: 8px 4px 8px 4px;
+  }
+  .Section:not(.Section--components-1).section-bgcover-w {
+    padding: 0 4px !important;
+  }
+  .Section--components-1.section-bgcover-w .Group {
+    max-width: 66.666%;
+  }
+  .Section .Component {
+    margin-bottom: 0;
+    position: relative;
+    width: 100%;
+  }
+  .Section {
+    display: flex;
+    padding: 6rem 13vw;
+  }
+
+
+  /* Section background image size
+  *********************************/
+
+  .section-bgcover-size-full .Bg {
+    width: 100%;
+    height: 100%;
+  }
+  .Section--components-1.section-bgcover-size-half .Bg,
+  .Section--components-2.section-bgcover-size-half .Bg,
+  .Section--components-3.section-bgcover-size-half .Bg
+  {
+    width: 50%;
+    height: 100%;
+  }
+  .Section--components-1.section-bgcover-size-third .Bg,
+  .Section--components-2.section-bgcover-size-third .Bg,
+  .Section--components-3.section-bgcover-size-third .Bg
+  {
+    width: 33.333%;
+    height: 100%;
+  }
+  .Section--components-1.section-bgcover-size-quarter .Bg,
+  .Section--components-2.section-bgcover-size-quarter .Bg
+  {
+    width: 25%;
+    height: 100%;
+  }
+
+
+  /* Title Sizing
+  **************************/
+
+  .Section.title-size-xxsmall h1,
+  .Section.title-size-xxsmall h1
+  {
+    font-size: 1rem;
+  }
+  .Section.title-size-xsmall h1 {
+    font-size: 1.25rem;
+  }
+  .Section.title-size-small h1 {
+    font-size: 1.5rem;
+  }
+  .Section.title-size-medium h1 {
+    font-size: 2rem;
+  }
+  .Section.title-size-large h1 {
+    font-size: 3rem;
+  }
+  .Section.title-size-xlarge h1 {
+    font-size: 4rem;
+  }
+  .Section.title-size-xxlarge h1 {
+    font-size: 5rem;
+  }
+
+  .Section.title-size-xxsmall h2,
+  .Section.title-size-xxsmall h2
+  {
+    font-size: .8rem;
+  }
+  .Section.title-size-xsmall h2 {
+    font-size: 1rem;
+  }
+  .Section.title-size-small h2 {
+    font-size: 1rem;
+  }
+  .Section.title-size-medium h2 {
+    font-size: 1.35rem;
+  }
+  .Section.title-size-large h2 {
+    font-size: 1.35rem;
+  }
+  .Section.title-size-xlarge h2 {
+    font-size: 1.35rem;
+  }
+  .Section.title-size-xxlarge h2 {
+    font-size: 1.35rem;
+  }
+
+  /* COMPONENT SPECIFIC
+  **********************/
+
+  /* Square 4
+  **********************/
+
+  /* Article */
+
+  article > div {
+    width: 50%;
+    margin: auto;
+    padding: 1vw;
+  }
+
+}
+/* DEMO UI */
+
+.System {
+  margin-top: 64px;
+  min-height: 100vh;
+}
+
+/*
+     FILE ARCHIVED ON 11:45:43 Aug 07, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:44:19 Jun 04, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 41.646 (3)
+  esindex: 0.009
+  captures_list: 67.67
+  CDXLines.iter: 15.073 (3)
+  PetaboxLoader3.datanode: 40.292 (5)
+  exclusion.robots: 0.216
+  exclusion.robots.policy: 0.204
+  RedisCDXSource: 3.592
+  PetaboxLoader3.resolve: 75.947 (2)
+  load_resource: 99.415
+*/
